@@ -83,7 +83,7 @@ const App = () => {
         <h2>Cash</h2>
         <input
           type="number"
-          value={cash}
+          value={Number(cash).toString()}
           onChange={(e) => setCash(Number(e.target.value))}
           min={0}
           max={1000}
