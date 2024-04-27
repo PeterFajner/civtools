@@ -82,9 +82,9 @@ const App = () => {
       <div>
         <h2>Cash</h2>
         <input
-          type="number"
-          value={Number(cash).toString()}
-          onChange={(e) => setCash(Number(e.target.value))}
+          type="text"
+          value={Number(cash) || ""}
+          onChange={(e) => setCash(Number(e.target.value) || 0)}
           min={0}
           max={1000}
         />
