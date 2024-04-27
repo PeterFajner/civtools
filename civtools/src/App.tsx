@@ -195,6 +195,7 @@ const App = () => {
           onChange={() => setSortByDiscount(false)}
         />
         <label htmlFor="sortByCost">Sort by cost</label>
+        {" "}
         <input
           type="radio"
           id="sortByDiscount"
