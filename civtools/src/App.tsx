@@ -14,8 +14,11 @@ const cards = (CardList as CivCard[]).sort(sortByCost);
 const cardsAlphabetical = (CardList as CivCard[]).sort(sortAlphabetically);
 
 const getSetValue = (set: CivCard[], discounts: DiscountTuple[]) =>
-  set.reduce(
-    (total, card) => total + card.cost - calculateDiscount(card, discounts),
+  Math.max(
+    set.reduce(
+      (total, card) => total + card.cost - calculateDiscount(card, discounts),
+      0
+    ),
     0
   );
 
@@ -115,8 +118,6 @@ const App = () => {
     () => cards.filter((card) => !inventory.includes(card)),
     [inventory]
   );
-
-  console.debug({ manualDiscounts, discounts });
 
   const setsAvailable = useMemo(() => {
     return findSets(cardsNotInInventory, cash).sort(
