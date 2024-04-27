@@ -22,7 +22,14 @@ export const Card = ({
 }) => {
   return (
     <div className="card">
-      <div className="cardHeader">{card.cardName}</div>
+      <div className="cardHeader">
+        <div className="cardTitle">{card.cardName}</div>
+        {remove && (
+          <button className="remove" onClick={remove}>
+            ×
+          </button>
+        )}
+      </div>
       <div className="cardBody">
         <div className="cardStats">
           <div className="cardCost">${card.cost}</div>
@@ -34,7 +41,6 @@ export const Card = ({
           </div>
         </div>
         <div>
-          <h5>Discounts</h5>
           <ul>
             {card.colorDiscounts.map((discount) => (
               <li key={discount.color}>
@@ -48,13 +54,6 @@ export const Card = ({
             )}
           </ul>
         </div>
-      </div>
-      <div className="cardFooter">
-        {remove && (
-          <button className="remove" onClick={remove}>
-            Remove
-          </button>
-        )}
       </div>
     </div>
   );

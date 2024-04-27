@@ -34,7 +34,7 @@ const ShopSet = ({
   return (
     <div className="shopSetWrapper">
       <div className="shopSet">
-        <div>
+        <div className="shopSetHeader">
           <p>{set.map((card) => card.cardName).join(", ")}</p>
           <p>${getSetValue(set, discounts)}</p>
           <p>

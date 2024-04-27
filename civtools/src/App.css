@@ -18,8 +18,24 @@
 
 .cardHeader {
   background-color: #0e0d0d;
-  padding: 10px;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+}
+
+.cardTitle {
+  flex-grow: 1;
+  margin: auto;
+  padding: 2px;
+}
+
+.remove {
+  background-color: rgb(184, 12, 12);
+  border-radius: 0;
+  flex-grow: 0;
+  font-size: 25px;
+  padding: 2px;
+  color: white;
 }
 
 .cardBody {
@@ -47,12 +63,13 @@
   flex-direction: row;
   flex-shrink: 0;
   margin: 5px;
+  align-items: center;
 }
 
-.remove {
-  background-color: rgb(75, 12, 12);
-  width: 100%;
-  border-radius: 0;
+.shopSetHeader {
+  width: 250px;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .card ul {
@@ -80,4 +97,12 @@
 
 input {
   font-size: 16px;
+}
+
+h4 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
 }
