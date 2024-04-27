@@ -41,7 +41,7 @@ export const Card = ({
                 <CardColor color={discount.color} />: {discount.discount}
               </li>
             ))}
-            {card.cardDiscount && (
+            {card.cardDiscount.discount > 0 && (
               <li>
                 {card.cardDiscount.cardName}: {card.cardDiscount.discount}
               </li>

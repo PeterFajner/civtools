@@ -8,7 +8,10 @@ import { Card } from "./components/Card";
 const sortAlphabetically = (a: CivCard, b: CivCard) =>
   a.cardName < b.cardName ? -1 : a.cardName > b.cardName ? 1 : 0;
 
-const cards = (CardList as CivCard[]).sort(sortAlphabetically);
+const sortByCost = (a: CivCard, b: CivCard) => a.cost - b.cost;
+
+const cards = (CardList as CivCard[]).sort(sortByCost);
+const cardsAlphabetical = (CardList as CivCard[]).sort(sortAlphabetically);
 
 const getSetValue = (set: CivCard[], discounts: DiscountTuple[]) =>
   set.reduce(
@@ -73,8 +76,6 @@ const App = () => {
     );
   }, [cardsNotInInventory, cash, discounts]);
 
-  console.debug({ cards, discounts, setsAvailable });
-
   return (
     <>
       <h1>Civ Shop Helper</h1>
@@ -100,7 +101,7 @@ const App = () => {
         }
       >
         <option value="">Select a card</option>
-        {cards
+        {cardsAlphabetical
           .filter((card) => !inventory.includes(card))
           .map((card) => (
             <option key={card.cardName} value={card.cardName}>

@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   overflow-x: hidden;
 }
@@ -22,12 +21,6 @@
   padding: 10px;
   font-weight: bold;
 }
-
-/* .cardColor {
-  color: white;
-  padding: 3px;
-  border-radius: 5px;
-} */
 
 .cardBody {
   padding: 10px;
@@ -53,6 +46,7 @@
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
+  margin: 5px;
 }
 
 .remove {
