@@ -237,7 +237,7 @@
             {"cardName" : "COLOR", "color": "GREEN", "discount": 5}, 
             {"cardName" : "COLOR", "color": "BLUE", "discount": 10}],
         "cardDiscount" : 
-            { "cardName" : "Mathmatics", "color": "CARD", "discount": 20 }
+            { "cardName" : "Mathematics", "color": "CARD", "discount": 20 }
     },
     {
         "cardName" : "Medicine", "cost" : 140, "points" : 3, 
@@ -384,7 +384,7 @@
             { "cardName" : "COLOR", "color": "CARD", "discount": 0 }
     },
     {
-        "cardName" : "Mathmatics", "cost" : 250, "points" : 6, 
+        "cardName" : "Mathematics", "cost" : 250, "points" : 6, 
         "colors" : ["GREEN", "BLUE"], 
         "colorDiscounts" : [
             {"cardName" : "COLOR", "color": "RED", "discount": 10}, 
