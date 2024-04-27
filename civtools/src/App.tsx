@@ -22,6 +22,9 @@ const getSetValue = (set: CivCard[], discounts: DiscountTuple[]) =>
     0
   );
 
+const getTotalDiscount = (set: CivCard[], discounts: DiscountTuple[]) =>
+  set.reduce((total, card) => total + calculateDiscount(card, discounts), 0);
+
 const ShopSet = ({
   set,
   discounts,
@@ -37,13 +40,7 @@ const ShopSet = ({
         <div className="shopSetHeader">
           <p>{set.map((card) => card.cardName).join(", ")}</p>
           <p>${getSetValue(set, discounts)}</p>
-          <p>
-            Total discount{" "}
-            {set.reduce(
-              (total, card) => total + calculateDiscount(card, discounts),
-              0
-            )}
-          </p>
+          <p>Total discount ${getTotalDiscount(set, discounts)}</p>
 
           <button onClick={buy}>Buy</button>
         </div>
@@ -95,6 +92,7 @@ const App = () => {
   const [manualDiscounts, setManualDiscounts] = useState<
     Record<string, number>
   >({});
+  const [sortByDiscount, setSortByDiscount] = useState(false);
 
   const cardDiscounts = useMemo(
     () =>
@@ -122,11 +120,12 @@ const App = () => {
   );
 
   const setsAvailable = useMemo(() => {
-    return findSets(cardsNotInInventory, cash).sort(
-      // sort from highest (discounted) value to lowest
-      (a, b) => getSetValue(b, discounts) - getSetValue(a, discounts)
+    return findSets(cardsNotInInventory, cash).sort((a, b) =>
+      sortByDiscount
+        ? getTotalDiscount(b, discounts) - getTotalDiscount(a, discounts)
+        : getSetValue(b, discounts) - getSetValue(a, discounts)
     );
-  }, [cardsNotInInventory, cash, discounts]);
+  }, [cardsNotInInventory, cash, discounts, sortByDiscount]);
 
   return (
     <>
@@ -187,6 +186,24 @@ const App = () => {
         ))}
       </div>
       <h2>Shop</h2>
+      <div>
+        <input
+          type="radio"
+          id="sortByCost"
+          name="sort"
+          checked={!sortByDiscount}
+          onChange={() => setSortByDiscount(false)}
+        />
+        <label htmlFor="sortByCost">Sort by cost</label>
+        <input
+          type="radio"
+          id="sortByDiscount"
+          name="sort"
+          checked={sortByDiscount}
+          onChange={() => setSortByDiscount(true)}
+        />
+        <label htmlFor="sortByDiscount">Sort by discount</label>
+      </div>
       <div>
         {setsAvailable.length ? (
           setsAvailable.map((set) => (
