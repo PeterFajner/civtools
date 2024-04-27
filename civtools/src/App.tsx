@@ -120,7 +120,7 @@ const App = () => {
   );
 
   const setsAvailable = useMemo(() => {
-    return findSets(cardsNotInInventory, cash).sort((a, b) =>
+    return findSets(cardsNotInInventory, cash, discounts).sort((a, b) =>
       sortByDiscount
         ? getTotalDiscount(b, discounts) - getTotalDiscount(a, discounts)
         : getSetValue(b, discounts) - getSetValue(a, discounts)
@@ -194,8 +194,7 @@ const App = () => {
           checked={!sortByDiscount}
           onChange={() => setSortByDiscount(false)}
         />
-        <label htmlFor="sortByCost">Sort by cost</label>
-        {" "}
+        <label htmlFor="sortByCost">Sort by cost</label>{" "}
         <input
           type="radio"
           id="sortByDiscount"

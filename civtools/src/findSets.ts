@@ -1,6 +1,11 @@
-import { CivCard } from "./CivCard";
+import { CivCard, DiscountTuple, calculateDiscount } from "./CivCard";
 
-const findSets = (cards: CivCard[], cash: number, maxNum = 100) => {
+const findSets = (
+  cards: CivCard[],
+  cash: number,
+  discounts: DiscountTuple[],
+  maxNum = 100
+) => {
   const sets: CivCard[][] = [];
   const stack: [CivCard[], number, number][] = [[[], cash, 0]];
 
@@ -8,7 +13,8 @@ const findSets = (cards: CivCard[], cash: number, maxNum = 100) => {
     const [currentSet, remaining, index] = stack.pop()!;
     for (let i = index; i < cards.length; i++) {
       const card = cards[i];
-      const newRemaining = remaining - card.cost;
+      const newRemaining =
+        remaining - (card.cost - calculateDiscount(card, discounts));
       if (newRemaining >= 0) {
         const newSet = [...currentSet, card];
         sets.push(newSet);
