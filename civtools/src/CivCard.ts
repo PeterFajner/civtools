@@ -24,9 +24,7 @@ const calculateDiscountForColor = (
   discounts.reduce(
     (totalDiscount, discountTuple) =>
       totalDiscount +
-      (color === discountTuple.color ||
-      (discountTuple.color === Color.CARD &&
-        discountTuple.cardName === card.cardName)
+      (discountTuple.color === color || discountTuple.cardName === card.cardName
         ? discountTuple.discount
         : 0),
     0
@@ -37,8 +35,10 @@ export const calculateDiscount = (
   card: CivCard,
   discounts: DiscountTuple[]
 ): number =>
-  card.colors.reduce((maxDiscount, color) =>
-    Math.max(maxDiscount, calculateDiscountForColor(card, color, discounts), 0)
+  card.colors.reduce(
+    (maxDiscount, color) =>
+      Math.max(maxDiscount, calculateDiscountForColor(card, color, discounts)),
+    0
   );
 
 // class CivCardClass {

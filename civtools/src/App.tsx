@@ -1,9 +1,16 @@
 import { useMemo, useState } from "react";
 import "./App.css";
-import { CivCard } from "./CivCard";
+import { CivCard, DiscountTuple, calculateDiscount } from "./CivCard";
 import { CardList } from "./CivCardList.json";
+import findSets from "./findSets";
 
 const cards = CardList as CivCard[];
+
+const getSetValue = (set: CivCard[], discounts: DiscountTuple[]) =>
+  set.reduce(
+    (total, card) => total + card.cost - calculateDiscount(card, discounts),
+    0
+  );
 
 const Card = ({ card, remove }: { card: CivCard; remove: () => void }) => {
   return (
@@ -20,9 +27,38 @@ const Card = ({ card, remove }: { card: CivCard; remove: () => void }) => {
               {discount.color}: {discount.discount}
             </li>
           ))}
+          {card.cardDiscount && (
+            <li>
+              {card.cardDiscount.cardName}: {card.cardDiscount.discount}
+            </li>
+          )}
         </ul>
       </div>
       <button onClick={remove}>Remove</button>
+    </div>
+  );
+};
+
+const ShopSet = ({
+  set,
+  discounts,
+  buy,
+}: {
+  set: CivCard[];
+  discounts: DiscountTuple[];
+  buy: () => void;
+}) => {
+  return (
+    <div>
+      <h3>
+        {set.map((card) => card.cardName).join(", ")} -{" "}
+        {getSetValue(set, discounts)} resources, total discount{" "}
+        {set.reduce(
+          (total, card) => total + calculateDiscount(card, discounts),
+          0
+        )}
+      </h3>
+      <button onClick={buy}>Buy</button>
     </div>
   );
 };
@@ -39,7 +75,19 @@ const App = () => {
     [inventory]
   );
 
-  console.debug({ cards, discounts });
+  const cardsNotInInventory = useMemo(
+    () => cards.filter((card) => !inventory.includes(card)),
+    [inventory]
+  );
+
+  const setsAvailable = useMemo(() => {
+    return findSets(cardsNotInInventory, cash).sort(
+      // sort from highest (discounted) value to lowest
+      (a, b) => getSetValue(b, discounts) - getSetValue(a, discounts)
+    );
+  }, [cardsNotInInventory, cash, discounts]);
+
+  console.debug({ cards, discounts, setsAvailable });
 
   return (
     <>
@@ -82,6 +130,24 @@ const App = () => {
         ))}
       </div>
       <h2>Shop</h2>
+      <div>
+        <h3>Available sets</h3>
+        {setsAvailable.length ? (
+          setsAvailable.map((set, i) => (
+            <ShopSet
+              key={i}
+              set={set}
+              discounts={discounts}
+              buy={() => {
+                setCash(cash - getSetValue(set, discounts));
+                setInventory([...inventory, ...set]);
+              }}
+            />
+          ))
+        ) : (
+          <p>No sets available</p>
+        )}
+      </div>
     </>
   );
 };
