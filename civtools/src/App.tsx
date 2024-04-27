@@ -74,7 +74,9 @@ const ManualDiscount = ({
         value={discount}
         onChange={(e) => setDiscount(Number(e.target.value))}
         min={0}
-        max={100}
+        max={1000}
+        pattern="[0-9]*"
+        inputMode="numeric"
       />
       <span>
         {allDiscounts
@@ -137,6 +139,8 @@ const App = () => {
           onChange={(e) => setCash(Number(e.target.value) || 0)}
           min={0}
           max={1000}
+          pattern="[0-9]*"
+          inputMode="numeric"
         />
       </div>
       <h2>Discounts</h2>
