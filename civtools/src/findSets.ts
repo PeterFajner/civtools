@@ -14,7 +14,7 @@ const findSets = (
     for (let i = index; i < cards.length; i++) {
       const card = cards[i];
       const newRemaining =
-        remaining - (card.cost - calculateDiscount(card, discounts));
+        remaining - Math.max(card.cost - calculateDiscount(card, discounts), 0);
       if (newRemaining >= 0) {
         const newSet = [...currentSet, card];
         sets.push(newSet);
