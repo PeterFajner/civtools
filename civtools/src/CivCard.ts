@@ -1,5 +1,14 @@
 export type Color = "RED" | "ORANGE" | "YELLOW" | "GREEN" | "BLUE" | "CARD";
 
+export const ColorHex = {
+  RED: "#FF3333",
+  ORANGE: "#FFA500",
+  YELLOW: "#FFFF00",
+  GREEN: "#008000",
+  BLUE: "#5555FF",
+  CARD: "#000000",
+};
+
 export type DiscountTuple = {
   cardName: string;
   color: Color;

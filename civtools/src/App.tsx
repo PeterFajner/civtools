@@ -3,41 +3,18 @@ import "./App.css";
 import { CivCard, DiscountTuple, calculateDiscount } from "./CivCard";
 import { CardList } from "./CivCardList.json";
 import findSets from "./findSets";
+import { Card } from "./components/Card";
 
-const cards = CardList as CivCard[];
+const sortAlphabetically = (a: CivCard, b: CivCard) =>
+  a.cardName < b.cardName ? -1 : a.cardName > b.cardName ? 1 : 0;
+
+const cards = (CardList as CivCard[]).sort(sortAlphabetically);
 
 const getSetValue = (set: CivCard[], discounts: DiscountTuple[]) =>
   set.reduce(
     (total, card) => total + card.cost - calculateDiscount(card, discounts),
     0
   );
-
-const Card = ({ card, remove }: { card: CivCard; remove: () => void }) => {
-  return (
-    <div>
-      <h3>{card.cardName}</h3>
-      <div>Cost: {card.cost}</div>
-      <div>Points: {card.points}</div>
-      <div>Colors: {card.colors.join(", ")}</div>
-      <div>
-        Discounts:
-        <ul>
-          {card.colorDiscounts.map((discount) => (
-            <li key={discount.color}>
-              {discount.color}: {discount.discount}
-            </li>
-          ))}
-          {card.cardDiscount && (
-            <li>
-              {card.cardDiscount.cardName}: {card.cardDiscount.discount}
-            </li>
-          )}
-        </ul>
-      </div>
-      <button onClick={remove}>Remove</button>
-    </div>
-  );
-};
 
 const ShopSet = ({
   set,
@@ -49,16 +26,25 @@ const ShopSet = ({
   buy: () => void;
 }) => {
   return (
-    <div>
-      <h3>
-        {set.map((card) => card.cardName).join(", ")} -{" "}
-        {getSetValue(set, discounts)} resources, total discount{" "}
-        {set.reduce(
-          (total, card) => total + calculateDiscount(card, discounts),
-          0
-        )}
-      </h3>
-      <button onClick={buy}>Buy</button>
+    <div className="shopSetWrapper">
+      <div className="shopSet">
+        <div>
+          <p>{set.map((card) => card.cardName).join(", ")}</p>
+          <p>${getSetValue(set, discounts)}</p>
+          <p>
+            Total discount{" "}
+            {set.reduce(
+              (total, card) => total + calculateDiscount(card, discounts),
+              0
+            )}
+          </p>
+
+          <button onClick={buy}>Buy</button>
+        </div>
+        {set.map((card) => (
+          <Card key={card.cardName} card={card} />
+        ))}
+      </div>
     </div>
   );
 };
@@ -131,11 +117,10 @@ const App = () => {
       </div>
       <h2>Shop</h2>
       <div>
-        <h3>Available sets</h3>
         {setsAvailable.length ? (
-          setsAvailable.map((set, i) => (
+          setsAvailable.map((set) => (
             <ShopSet
-              key={i}
+              key={set.map((card) => card.cardName).join("")}
               set={set}
               discounts={discounts}
               buy={() => {
