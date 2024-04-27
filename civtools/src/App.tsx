@@ -77,7 +77,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Civ Shop Helper (0.0.3)</h1>
+      <h1>Civ Shop Helper</h1>
       <div>
         <h2>Cash</h2>
         <input
