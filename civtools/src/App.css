@@ -62,3 +62,18 @@
 .card li {
   width: fit-content;
 }
+
+.manualDiscounts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.manualDiscount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  width: 17%;
+}
