@@ -1,0 +1,212 @@
+{"CardList" : [
+    {
+        "cardName" : "Mysticism", "cost" : 50, "points" : 1, 
+        "colors" : ["YELLOW", "BLUE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Monument", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Sculpture", "cost" : 50, "points" : 1, 
+        "colors" : ["BLUE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Architecture", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Cloth Making", "cost" : 50, "points" : 1, 
+        "colors" : ["ORANGE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Naval Warfare", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Urbanism", "cost" : 50, "points" : 1, 
+        "colors" : ["RED"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Diplomacy", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Monarchy", "cost" : 60, "points" : 1, 
+        "colors" : ["RED"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Law", "color": "CARD", "discount": 10}
+    },
+    {
+        "cardName" : "Written Record", "cost" : 60, "points" : 1, 
+        "colors" : ["RED", "GREEN"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Cartography", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Pottery", "cost" : 60, "points" : 1, 
+        "colors" : ["ORANGE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Agriculture", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Masonry", "cost" : 60, "points" : 1, 
+        "colors" : ["ORANGE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Engineering", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Mythology", "cost" : 60, "points" : 1, 
+        "colors" : ["YELLOW"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Literacy", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Empiricism", "cost" : 60, "points" : 1, 
+        "colors" : ["GREEN"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Medicine", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Deism", "cost" : 70, "points" : 1, 
+        "colors" : ["YELLOW"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Fundamentalism", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Theocracy", "cost" : 80, "points" : 1, 
+        "colors" : ["RED", "YELLOW"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Universal Doctrine", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Drama and Poetry", "cost" : 80, "points" : 1, 
+        "colors" : ["BLUE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Rhetoric", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Music", "cost" : 80, "points" : 1, 
+        "colors" : ["BLUE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Enlightenment", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Astronavigation", "cost" : 80, "points" : 1, 
+        "colors" : ["GREEN"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Calendar", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Coinage", "cost" : 90, "points" : 1, 
+        "colors" : ["GREEN"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Trade Routes", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Metal Working", "cost" : 90, "points" : 1, 
+        "colors" : ["ORANGE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Military", "color": "CARD", "discount": 10 }
+    },
+    {
+        "cardName" : "Monument", "cost" : 180, "points" : 3, 
+        "colors" : ["ORANGE", "YELLOW"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Wonder of the World", "color": "CARD", "discount": 20 }
+    },
+    {
+        "cardName" : "Architecture", "cost" : 140, "points" : 3, 
+        "colors" : ["BLUE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Mining", "color": "CARD", "discount": 20 }
+    },
+    {
+        "cardName" : "Naval Warfare", "cost" : 160, "points" : 3, 
+        "colors" : ["ORANGE", "YELLOW"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "ORANGE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Diaspora", "color": "CARD", "discount": 20 }
+    },
+    {
+        "cardName" : "Diplomacy", "cost" : 160, "points" : 3, 
+        "colors" : ["BLUE"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 10}],
+        "cardDiscount" : 
+            { "cardName" : "Provincial Empire", "color": "CARD", "discount": 20 }
+    },
+    {
+        "cardName" : "Law", "cost" : 150, "points" : 3, 
+        "colors" : ["RED"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "RED", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "YELLOW", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Cultural Ascendancy", "color": "CARD", "discount": 20 }
+    },
+    {
+        "cardName" : "Cartography", "cost" : 160, "points" : 3, 
+        "colors" : ["GREEN"], 
+        "colorDiscounts" : [
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 10}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+        "cardDiscount" : 
+            { "cardName" : "Library", "color": "CARD", "discount": 20 }
+    }
+]}
