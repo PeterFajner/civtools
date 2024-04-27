@@ -84,6 +84,8 @@ const App = () => {
           type="number"
           value={cash}
           onChange={(e) => setCash(Number(e.target.value))}
+          min={0}
+          max={1000}
         />
       </div>
       <h2>Inventory</h2>
