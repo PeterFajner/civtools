@@ -168,8 +168,8 @@
         "cardName" : "Architecture", "cost" : 140, "points" : 3, 
         "colors" : ["BLUE"], 
         "colorDiscounts" : [
-            {"cardName" : "COLOR", "color": "GREEN", "discount": 10}, 
-            {"cardName" : "COLOR", "color": "BLUE", "discount": 5}],
+            {"cardName" : "COLOR", "color": "GREEN", "discount": 5}, 
+            {"cardName" : "COLOR", "color": "BLUE", "discount": 10}],
         "cardDiscount" : 
             { "cardName" : "Mining", "color": "CARD", "discount": 20 }
     },
